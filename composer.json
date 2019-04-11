@@ -1,0 +1,49 @@
+{
+    "name": "mineko-io/laravel-namespace-dispatcher",
+    "description": "Dispatches jobs by convention to separate handler class located next to job definition",
+    "type": "library",
+    "require": {
+        "laravel/framework": ">=5.6.0",
+        "php": ">=7.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2@dev",
+        "codeclimate/php-test-reporter": "^0.3.0@dev"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mineko GmbH",
+            "email": "tech@mineko.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Mineko\\Bus\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mineko\\Bus\\": [
+                "tests/"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit -c tests/phpunit.xml"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mineko\\Bus\\BusServiceProvider"
+            ]
+        }
+    }
+}
